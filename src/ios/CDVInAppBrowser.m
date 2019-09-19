@@ -31,6 +31,7 @@
 - (void)open:(CDVInvokedUrlCommand*)command
 {
     NSString* options = [command argumentAtIndex:2 withDefault:@"" andClass:[NSString class]];
+    NSString* headers = [command argumentAtIndex:3 withDefault:@"" andClass:[NSString class]];
     CDVInAppBrowserOptions* browserOptions = [CDVInAppBrowserOptions parseOptions:options];
     [[CDVWKInAppBrowser getInstance] open:command];
 }
