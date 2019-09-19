@@ -1083,7 +1083,8 @@ BOOL isExiting = FALSE;
 
 - (void)navigateTo:(NSURL*)url headers:(NSString*)headers
 {
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
+    // NSURLRequest* request = [NSURLRequest requestWithURL:url];
     NSArray* pairs = [headers componentsSeparatedByString:@","];
 
     for (NSString* pair in pairs) {
